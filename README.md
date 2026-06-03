@@ -106,12 +106,14 @@ Feature engineering for business insights
 SQL analytics (joins, aggregates, window functions, CTEs)
 PostgreSQL integration with Python
 Version control using Git and GitHub
+
 📌 Future Improvements
 Add Apache Airflow for orchestration
 Implement Docker containerization
 Build real-time streaming pipeline (Kafka)
 Create Power BI / Tableau dashboard
 Deploy as cloud-based ETL system
+
 👨‍💻 Author
 
 OpsPulse – Data Engineering Learning Project
