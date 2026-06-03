@@ -1,15 +1,18 @@
-📊 OpsPulse - Data Engineering ETL Pipeline
+📊 OpsPulse – End-to-End Data Engineering ETL Pipeline
 📌 Project Overview
 
-OpsPulse is a beginner-friendly Data Engineering project that simulates a real-world ETL (Extract, Transform, Load) pipeline using the Kaggle Global Superstore dataset.
+OpsPulse is a beginner-to-intermediate Data Engineering project that simulates a real-world ETL (Extract, Transform, Load) pipeline using the Kaggle Global Superstore dataset.
 
-The project focuses on:
+The project demonstrates how raw data is transformed into analytics-ready data using Python and PostgreSQL.
 
-Data ingestion from CSV
-Data cleaning and transformation using Pandas
-Feature engineering
-Basic data validation using Pytest
-Clean project structuring with Git version control
+🎯 Key Objectives
+Build a modular ETL pipeline
+Clean and transform raw retail data
+Perform feature engineering for analytics
+Load structured data into a relational database (PostgreSQL)
+Run SQL-based analytics queries
+Export query results using Python
+Implement basic data validation tests using Pytest
 📂 Dataset Used
 
 Kaggle Global Superstore Dataset
@@ -17,79 +20,104 @@ Kaggle Global Superstore Dataset
 This dataset contains global retail transaction data including:
 
 Sales and Profit
-Customers and Orders
-Product details
-Shipping information
-Regional and market data
+Customer and Order details
+Product information
+Shipping details
+Region and Market data
 ⚙️ Project Workflow (ETL Pipeline)
-1. Extract
+1️⃣ Extract
 Load raw CSV dataset using Pandas
-2. Transform
+2️⃣ Transform
 
-Data cleaning and feature engineering:
+Performed data cleaning and feature engineering:
 
 Removed duplicate records
 Handled missing values
 Converted date columns (order_date, ship_date)
-Created new features:
+Created new business features:
 profit_margin
 shipping_delay_days
 discount_impact
 sales_category
 profit_category
 is_high_value_order
-3. Load
-Saved cleaned dataset into data/processed/
-🧠 Key Features Implemented
-ETL pipeline structure (Extract → Transform → Load)
-Data cleaning and preprocessing
-Feature engineering for business insights
-Data validation using Pytest
-Modular Python project structure
-🧪 Running Tests
+3️⃣ Load
+Cleaned dataset loaded into PostgreSQL relational database
+Used SQLAlchemy + psycopg2
+Data stored in table: processed_superstore
+🧠 SQL Analytics (Key Component)
 
-Run all tests using:
+Performed SQL-based analysis including:
 
-python -m pytest tests/
+Aggregations (SUM, AVG, COUNT)
+Filtering and grouping
+Window functions (RANK, SUM OVER PARTITION)
+CTE (Common Table Expressions)
+Business KPIs like:
+Category-wise sales
+Top customers
+Profit segmentation
+📊 Python + SQL Integration
 
-Tests include:
+Example:
+
+Executed SQL queries from Python
+Exported query results as CSV for reporting
+🧪 Testing (Pytest)
+
+Basic data validation tests include:
 
 Null value checks
 Column existence validation
-Transformation output verification
+Transformation correctness checks
+
+Run tests:
+
+python -m pytest tests/
 🚀 How to Run the Project
-1. Install dependencies
-pip install pandas numpy pytest
-2. Run pipeline
+1️⃣ Install dependencies
+pip install pandas numpy sqlalchemy psycopg2-binary pytest
+2️⃣ Run ETL pipeline
 python main.py
 📁 Project Structure
 OpsPulse/
-│── data/
+│
+├── data/
 │   ├── raw/
 │   ├── processed/
 │
-│── src/
+├── src/
 │   ├── extract.py
 │   ├── transform.py
 │   ├── load.py
 │
-│── tests/
+├── sql/
+│   ├── analytics_queries.sql
+│
+├── tests/
 │   ├── test_transform.py
 │
-│── main.py
-│── README.md
-🧠 What I Learned
-Basics of Data Engineering pipelines
-ETL vs ELT concepts
-Data cleaning using Pandas
-Feature engineering techniques
-Writing basic unit tests with Pytest
-Git and GitHub workflow for version control
+├── main.py
+└── README.md
+🧠 Key Learnings
+Building ETL pipelines using Python
+Data cleaning and preprocessing techniques
+Feature engineering for business insights
+SQL analytics (joins, aggregates, window functions, CTEs)
+PostgreSQL integration with Python
+Version control using Git and GitHub
 📌 Future Improvements
-Add SQL database integration (PostgreSQL/MySQL)
-Build Airflow pipeline for orchestration
-Deploy pipeline using Docker
-Add real-time streaming version
+Add Apache Airflow for orchestration
+Implement Docker containerization
+Build real-time streaming pipeline (Kafka)
+Create Power BI / Tableau dashboard
+Deploy as cloud-based ETL system
 👨‍💻 Author
 
-Data Engineering Learning Project (OpsPulse)
+OpsPulse – Data Engineering Learning Project
+
+🏆 Final Note
+
+This project demonstrates:
+
+End-to-end Data Engineering pipeline from raw data → cleaned data → database → analytics layer
